@@ -72,7 +72,7 @@ public class AddBloodDataViewImpl extends Composite implements AddBloodDataView 
 		return Long.parseLong(patient.getValue());
 	}
 
-	public Date getTime() {
+	public Date getTimestamp() {
 		return timestamp.getValue();
 	}
 
@@ -98,6 +98,7 @@ public class AddBloodDataViewImpl extends Composite implements AddBloodDataView 
 
 		item.setId(getId());
 		item.setPatientId(getPatientId());
+		item.setTimestamp(getTimestamp());
 		item.setSystolic(getSystolic());
 		item.setDiastolic(getDiastolic());
 		item.setPulse(getPulse());

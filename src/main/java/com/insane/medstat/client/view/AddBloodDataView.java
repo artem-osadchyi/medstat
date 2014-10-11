@@ -8,7 +8,7 @@ public interface AddBloodDataView {
 
 	long getPatientId();
 
-	Date getTime();
+	Date getTimestamp();
 
 	int getSystolic();
 

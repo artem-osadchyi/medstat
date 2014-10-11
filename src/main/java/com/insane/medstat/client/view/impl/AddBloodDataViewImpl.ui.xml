@@ -1,0 +1,91 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder
+	xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
+	xmlns:bdtp="urn:import:org.gwtbootstrap3.extras.datetimepicker.client.ui"
+>
+	<ui:style>
+	
+	</ui:style>
+	<b:Container>
+		<b:Row>
+			<b:Panel ui:field="panel">
+				<b:PanelBody>
+					<b:Form>
+						<b:FormGroup>
+							<b:FormLabel
+								text="ID"
+								for="id" />
+							<b:Input
+								ui:field="id"
+								type="NUMBER" />
+						</b:FormGroup>
+						<b:FormGroup>
+							<b:FormLabel
+								text="Patient ID"
+								for="patient" />
+							<b:Input
+								ui:field="patient"
+								type="NUMBER" />
+						</b:FormGroup>
+						<b:FormGroup>
+							<b:FormLabel
+								text="Time"
+								for="timestamp" />
+							<bdtp:DateTimePicker
+								ui:field="timestamp"
+								autoClose="true"
+								highlightToday="true"
+								weekStart="MONDAY"
+								showTodayButton="true"
+								minuteStep="30"
+								maxView="MONTH"
+								language="RU"
+								hasKeyboardNavigation="true"
+								forceParse="true" />
+						</b:FormGroup>
+						<b:FormGroup>
+							<b:FormLabel
+								text="Systolic Blood Pressure"
+								for="sbp" />
+							<b:Input
+								ui:field="sbp"
+								type="NUMBER" />
+						</b:FormGroup>
+						<b:FormGroup>
+							<b:FormLabel
+								text="Diastolic Blood Pressure"
+								for="dbp" />
+							<b:Input
+								ui:field="dbp"
+								type="NUMBER" />
+						</b:FormGroup>
+						<b:FormGroup>
+							<b:FormLabel
+								text="Pulse"
+								for="pulse" />
+							<b:Input
+								ui:field="pulse"
+								type="NUMBER" />
+						</b:FormGroup>
+						<b:FormGroup>
+							<b:FormLabel
+								text="Comment"
+								for="comment" />
+							<b:Input
+								ui:field="comment"
+								type="TEXT" />
+						</b:FormGroup>
+						<b:FormGroup>
+							<b:Button
+								ui:field="submit"
+								text="Submit"
+								type="PRIMARY" />
+						</b:FormGroup>
+					</b:Form>
+				</b:PanelBody>
+			</b:Panel>
+		</b:Row>
+	</b:Container>
+</ui:UiBinder>

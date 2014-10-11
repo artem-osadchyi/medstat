@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='MedStat'>
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name='com.google.gwt.junit.JUnit' />
+	<inherits name='com.google.gwt.user.theme.standard.Standard' />
+	<inherits name="org.gwtbootstrap3.GwtBootstrap3" />
+	<inherits name="org.gwtbootstrap3.extras.datetimepicker.DateTimePicker" />
+	<entry-point class='com.insane.medstat.client.MedStat' />
+	<source path='client' />
+	<source path='shared' />
+</module>

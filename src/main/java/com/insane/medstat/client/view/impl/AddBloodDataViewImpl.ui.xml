@@ -16,25 +16,25 @@
 						<b:FormGroup>
 							<b:FormLabel
 								text="ID"
-								for="id" />
+								for="idInput" />
 							<b:Input
-								ui:field="id"
+								ui:field="idInput"
 								type="NUMBER" />
 						</b:FormGroup>
 						<b:FormGroup>
 							<b:FormLabel
 								text="Patient ID"
-								for="patient" />
+								for="patientIdInput" />
 							<b:Input
-								ui:field="patient"
+								ui:field="patientIdInput"
 								type="NUMBER" />
 						</b:FormGroup>
 						<b:FormGroup>
 							<b:FormLabel
 								text="Time"
-								for="timestamp" />
+								for="timestampPicker" />
 							<bdtp:DateTimePicker
-								ui:field="timestamp"
+								ui:field="timestampPicker"
 								autoClose="true"
 								highlightToday="true"
 								weekStart="MONDAY"
@@ -48,38 +48,38 @@
 						<b:FormGroup>
 							<b:FormLabel
 								text="Systolic Blood Pressure"
-								for="sbp" />
+								for="systolicInput" />
 							<b:Input
-								ui:field="sbp"
+								ui:field="systolicInput"
 								type="NUMBER" />
 						</b:FormGroup>
 						<b:FormGroup>
 							<b:FormLabel
 								text="Diastolic Blood Pressure"
-								for="dbp" />
+								for="diastolicInput" />
 							<b:Input
-								ui:field="dbp"
+								ui:field="diastolicInput"
 								type="NUMBER" />
 						</b:FormGroup>
 						<b:FormGroup>
 							<b:FormLabel
 								text="Pulse"
-								for="pulse" />
+								for="pulseInput" />
 							<b:Input
-								ui:field="pulse"
+								ui:field="pulseInput"
 								type="NUMBER" />
 						</b:FormGroup>
 						<b:FormGroup>
 							<b:FormLabel
 								text="Comment"
-								for="comment" />
+								for="commentInput" />
 							<b:Input
-								ui:field="comment"
+								ui:field="commentInput"
 								type="TEXT" />
 						</b:FormGroup>
 						<b:FormGroup>
 							<b:Button
-								ui:field="submit"
+								ui:field="submitButton"
 								text="Submit"
 								type="PRIMARY" />
 						</b:FormGroup>

@@ -1,32 +1,59 @@
 package com.insane.medstat.shared.dto;
 
+import static com.insane.medstat.shared.constants.BloodDataItemConstants.*;
+
 import java.io.Serializable;
 import java.util.Date;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 public class BloodDataItem implements Serializable {
 	private static final long serialVersionUID = -1720158304172289195L;
 
-	private long id;
-	private long patientId;
+	@NotNull(message = ID_NULL_MESSAGE)
+	private Long id;
+
+	@NotNull(message = PATIENT_ID_NULL_MESSAGE)
+	private Long patientId;
+
+	@Past(message = TIMESTAMP_FUTURE_MESSAGE)
+	@NotNull(message = TIMESTAMP_NULL_MESSAGE)
 	private Date timestamp;
-	private int systolic;
-	private int diastolic;
-	private int pulse;
+
+	@Min(value = MIN_SYSTOLIC_VALUE, message = SYSTOLIC_LOW_MESSAGE)
+	@Max(value = MAX_SYSTOLIC_VALUE, message = SYSTOLIC_HIGH_MESSAGE)
+	private Integer systolic;
+
+	@Min(value = MIN_DIASTOLIC_VALUE, message = DIASTOLIC_LOW_MESSAGE)
+	@Max(value = MAX_DIASTOLIC_VALUE, message = DIASTOLIC_HIGH_MESSAGE)
+	private Integer diastolic;
+
+	@Min(value = MIN_PULSE_VALUE, message = PULSE_LOW_MESSAGE)
+	@Max(value = MAX_PULSE_VALUE, message = PULSE_HIGH_MESSAGE)
+	private Integer pulse;
+
+	@Pattern(regexp = COMMENT_PATTERN, message = COMMENT_MATCH_MESSAGE)
+	@Size(min = MIN_COMMENT_SIZE, max = MAX_COMMENT_SIZE, message = COMMENT_SIZE_MESSAGE)
 	private String comment;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public long getPatientId() {
+	public Long getPatientId() {
 		return patientId;
 	}
 
-	public void setPatientId(long patientId) {
+	public void setPatientId(Long patientId) {
 		this.patientId = patientId;
 	}
 
@@ -38,27 +65,27 @@ public class BloodDataItem implements Serializable {
 		this.timestamp = timestamp;
 	}
 
-	public int getSystolic() {
+	public Integer getSystolic() {
 		return systolic;
 	}
 
-	public void setSystolic(int systolic) {
+	public void setSystolic(Integer systolic) {
 		this.systolic = systolic;
 	}
 
-	public int getDiastolic() {
+	public Integer getDiastolic() {
 		return diastolic;
 	}
 
-	public void setDiastolic(int diastolic) {
+	public void setDiastolic(Integer diastolic) {
 		this.diastolic = diastolic;
 	}
 
-	public int getPulse() {
+	public Integer getPulse() {
 		return pulse;
 	}
 
-	public void setPulse(int pulse) {
+	public void setPulse(Integer pulse) {
 		this.pulse = pulse;
 	}
 
@@ -75,7 +102,7 @@ public class BloodDataItem implements Serializable {
 		final int prime = 31;
 		int result = 1;
 
-		result = prime * result + (int) (id ^ (id >>> 32));
+		result = (prime * result) + (int) (id ^ (id >>> 32));
 
 		return result;
 	}
@@ -94,17 +121,17 @@ public class BloodDataItem implements Serializable {
 			return false;
 		}
 
-		BloodDataItem other = (BloodDataItem) obj;
+		final BloodDataItem other = (BloodDataItem) obj;
 
-		return this.id == other.getId();
+		return id == other.getId();
 	}
 
 	@Override
 	public String toString() {
-		return "BloodDataItem [id=" + id + ", patientId=" + patientId
-				+ ", timestamp=" + timestamp + ", systolic=" + systolic
-				+ ", diastolic=" + diastolic + ", pulse=" + pulse
-				+ ", comment=" + comment + "]";
+		return "BloodDataItem [idInput=" + id + ", patientIdInput=" + patientId
+				+ ", timestampPicker=" + timestamp + ", systolicInput=" + systolic
+				+ ", diastolicInput=" + diastolic + ", pulseInput=" + pulse
+				+ ", commentInput=" + comment + "]";
 	}
 
 }
